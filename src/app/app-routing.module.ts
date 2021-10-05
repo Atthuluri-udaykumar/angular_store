@@ -7,8 +7,9 @@ import { PostComponent } from './post/post.component';
 import { PostModule } from './post/post.module';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'auth', loadChildren: () => import('../app/auth/auth.module').then(m => m.AuthModule) },
   { path: 'post', loadChildren: () => import('./post/post.module').then(m => m.PostModule) },
+  { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
