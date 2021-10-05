@@ -29,6 +29,7 @@ export class PostFormComponent implements OnInit {
     this._router.params.subscribe(data => {
       idValue = data.id;
     })
+
     console.log(idValue);
 
 

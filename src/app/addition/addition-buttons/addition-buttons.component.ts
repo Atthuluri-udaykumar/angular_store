@@ -17,12 +17,11 @@ export class AdditionButtonsComponent implements OnInit {
   }
 
   onSubstract() {
-    this.store.dispatch(toSubValue({ value: this.subValue }))
-
+    this.store.dispatch(toSubValue({ value: this.subValue }));
   }
 
   onAdd() {
-    this.store.dispatch(toAddValue({ value: this.addValue }))
+    this.store.dispatch(toAddValue({ value: this.addValue }));
   }
 
 }

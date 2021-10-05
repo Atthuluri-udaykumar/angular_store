@@ -21,6 +21,7 @@ import { PostComponent } from './post/post.component';
 import { appReducer } from './store/app.store';
 import { PostFormComponent } from './post/post-form/post-form.component';
 import { PostViewComponent } from './post/post-view/post-view.component';
+import { PostModule } from './post/post.module';
 
 @NgModule({
   declarations: [
@@ -33,9 +34,7 @@ import { PostViewComponent } from './post/post-view/post-view.component';
     AdditionViewComponent,
     HomeComponent,
     AboutComponent,
-    PostComponent,
-    PostFormComponent,
-    PostViewComponent
+
   ],
   imports: [
     BrowserModule,
