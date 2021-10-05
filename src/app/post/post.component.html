@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-6">
+    <a (click)="onUpdate('new')" class="btn btn-info">add Post</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">id</th>
+          <th scope="col">title</th>
+          <th scope="col">description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of postdata$|async;let i=index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{item.id}}</td>
+          <td>{{item.title}}</td>
+          <td>{{item.description}}</td>
+          <td>
+            <button class="btn btn-primary" (click)="onUpdate(item.id)">update</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <div class="col-6">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
