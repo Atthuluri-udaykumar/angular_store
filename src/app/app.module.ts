@@ -17,7 +17,9 @@ import { environment } from 'src/environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { appReducer } from './store/app.store';
 
-import { EffectsModule } from "@ngrx/effects"
+import { EffectsModule } from "@ngrx/effects";
+import { HttpClientModule } from '@angular/common/http';
+import { LoderComponent } from './shared/loder/loder.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,12 +31,13 @@ import { EffectsModule } from "@ngrx/effects"
     AdditionViewComponent,
     HomeComponent,
     AboutComponent,
-
+    LoderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     FormsModule,
     StoreModule.forRoot(appReducer),
     EffectsModule.forRoot([]),

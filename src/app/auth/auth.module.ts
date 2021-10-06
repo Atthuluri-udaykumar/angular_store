@@ -3,7 +3,11 @@ import { CommonModule } from '@angular/common';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { RouterModule } from '@angular/router';
-
+import { EffectsModule } from "@ngrx/effects"
+import { AuthEffects } from './store/auth.effects';
+import { StoreModule } from '@ngrx/store';
+import { AUTH_STATE_NAME } from './store/auth.selector';
+import { authReducer } from './store/auth.reducer';
 
 
 @NgModule({
@@ -13,6 +17,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    EffectsModule.forFeature([AuthEffects]),
+    StoreModule.forFeature(AUTH_STATE_NAME, authReducer),
     RouterModule.forChild([
       {
         path: '',

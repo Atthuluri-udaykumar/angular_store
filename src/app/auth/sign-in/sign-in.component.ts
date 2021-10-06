@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { setLoadingAction } from 'src/app/shared/store/shated.actions';
+import { appState } from 'src/app/store/app.store';
+import { loginStart } from '../store/auth.action';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<any>) { }
 
   ngOnInit(): void {
+
   }
 
+  onSubmit() {
+    this.store.dispatch(setLoadingAction({ isLoading: true }))
+    this.store.dispatch(loginStart({ email: 'test@gmail.com', password: 'test@123' }))
+  }
 }
+
