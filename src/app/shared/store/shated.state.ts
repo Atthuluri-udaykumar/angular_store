@@ -1,7 +1,7 @@
 export interface ShatedInitialState {
-  showLoading: boolean
+  showLoading: boolean,
 }
 
 export const shatedInitialState: ShatedInitialState = {
-  showLoading: false
+  showLoading: false,
 }
