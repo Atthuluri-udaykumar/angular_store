@@ -26,6 +26,9 @@
   </div>
 </nav>
 
+<div class="alert alert-danger" role="alert" *ngIf="errorMessage$ |async">
+  {{ errorMessage$ |async}}
+</div>
 <app-loder *ngIf="showLoading$ |async"></app-loder>
 
 <!-- <app-counter></app-counter> -->

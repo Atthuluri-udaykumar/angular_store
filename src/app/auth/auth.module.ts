@@ -8,6 +8,7 @@ import { AuthEffects } from './store/auth.effects';
 import { StoreModule } from '@ngrx/store';
 import { AUTH_STATE_NAME } from './store/auth.selector';
 import { authReducer } from './store/auth.reducer';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { authReducer } from './store/auth.reducer';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     EffectsModule.forFeature([AuthEffects]),
     StoreModule.forFeature(AUTH_STATE_NAME, authReducer),
     RouterModule.forChild([

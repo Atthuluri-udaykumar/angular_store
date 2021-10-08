@@ -11,6 +11,8 @@ import { loginStart } from '../store/auth.action';
 })
 export class SignInComponent implements OnInit {
 
+  email!: string;
+  password!: string;
   constructor(private store: Store<any>) { }
 
   ngOnInit(): void {
@@ -19,7 +21,7 @@ export class SignInComponent implements OnInit {
 
   onSubmit() {
     this.store.dispatch(setLoadingAction({ isLoading: true }))
-    this.store.dispatch(loginStart({ email: 'test@gmail.com', password: 'test@123' }))
+    this.store.dispatch(loginStart({ email: this.email, password: this.password }))
   }
 }
 

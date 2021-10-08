@@ -7,3 +7,7 @@ const sharedSelector = createFeatureSelector(SHARED_STATE_NAME);
 export const getSharedState = createSelector(sharedSelector, (state: any) => {
   return state.showLoading;
 })
+
+export const getErrorMessage = createSelector(sharedSelector, (state: any) => {
+  return state.errorMessage;
+})
