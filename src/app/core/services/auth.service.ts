@@ -21,4 +21,8 @@ export class AuthService {
     let user = new User(data.email, data.idToken, data.localId, expirationDate);
     return user;
   }
+
+  onSignUp(email: string, password: string): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.FIRE_BASE_API_KEY}`, { email, password, returnSecureToken: true })
+  }
 }
